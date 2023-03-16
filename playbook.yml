@@ -9,5 +9,14 @@
     - name: Pull docker image
       shell: docker pull shashnagaral/calculator-mini-project:latest
 
+    - name: Get container info
+      docker_container_info:
+        name: calculator
+      register: container
+
+    - name: Remove container if exists
+      shell: docker stop calculator && docker rm calculator
+      when: result.exists
+
     - name: Run docker image
-      shell: docker stop calculator && docker rm calculator && docker run -it --name calculator -d shashnagaral/calculator-mini-project:latest
+      shell: docker run -it --name calculator -d shashnagaral/calculator-mini-project:latest
