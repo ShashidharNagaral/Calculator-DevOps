@@ -20,13 +20,11 @@ public class Calculator {
         do {
             System.out.println("----------------Calculator-DevOps----------------");
             System.out.println(
-                    """ 
-                            Enter 1 for Square root.\s
-                            Enter 2 for Factorial function.\s
-                            Enter 3 for Natural logarithm (base e).\s
-                            Enter 4 for Power function.\s
-                            Enter 5 for exit.
-                            """);
+                    "Enter 1 for Square root.\n" +
+                    "Enter 2 for Factorial function.\n" +
+                    "Enter 3 for Natural logarithm (base e).\n" +
+                    "Enter 4 for Power function.\n"+
+                    "Enter 5 for exit. ");
             choice = scanner.nextInt();
 
             switch (choice) {
