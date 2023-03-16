@@ -12,7 +12,7 @@
     - name: Get container info
       docker_container_info:
         name: calculator
-      register: container
+      register: result
 
     - name: Remove container if exists
       shell: docker stop calculator && docker rm calculator
