@@ -18,7 +18,7 @@ public class Calculator {
         double result = 0;
         double input1, input2;
         do {
-            System.out.println("----------------Calculator-DevOps----------------");
+            System.out.println("-----------------Calculator-DevOps-----------------");
             System.out.println(
                     "Enter 1 for Square root.\n" +
                     "Enter 2 for Factorial function.\n" +
