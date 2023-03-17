@@ -19,4 +19,4 @@
       when: result.exists
 
     - name: Run docker image
-      shell: docker run -it --name calculator -d shashnagaral/calculator-mini-project:latest
+      shell: docker run -it --name calculator shashnagaral/calculator-mini-project:latest
