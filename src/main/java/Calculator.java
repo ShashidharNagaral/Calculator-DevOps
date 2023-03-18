@@ -128,7 +128,7 @@ public class Calculator {
                         input2 = scanner.nextDouble();
                         logger.info("exponent: "+input2);
 
-                        result = calculator.powerF(scanner.nextDouble(), scanner.nextDouble());
+                        result = calculator.powerF(input1, input2);
                         System.out.println("result: " + result);
                         break;
                     case 5:
