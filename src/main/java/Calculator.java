@@ -1,7 +1,12 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
+
     public Calculator() {
     }
 
@@ -50,9 +55,14 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
         int choice;
-        double result;
+        double input1, input2, result;
+        int int_input1;
+        System.out.println("Press any key to start calculator!");
+        scanner.nextLine(); // skip first input while running in container
+        System.out.println("-----------------Calculator-DevOps-----------------");
         do {
-            System.out.println("-----------------Calculator-DevOps-----------------");
+            logger.info("Showing calculator menu");
+
             System.out.println(
                     "Enter 1 for Square root.\n" +
                     "Enter 2 for Factorial function.\n" +
@@ -61,43 +71,77 @@ public class Calculator {
                     "Enter 5 for exit. ");
             try {
                 choice = scanner.nextInt();
+                logger.info("choice selected: "+choice);
+
                 switch (choice) {
                     case 1:
-                        result = calculator.squareRootF(scanner.nextDouble());
+                        logger.info("square root function");
+
+                        input1 = scanner.nextDouble();
+                        logger.info("input: "+input1);
+
+                        result = calculator.squareRootF(input1);
                         if (result == -1) {
                             System.out.println("Please enter positive number!");
+                            logger.error("entered negative number");
                         } else {
                             System.out.println("result: " + result);
+                            logger.info("result: "+result);
                         }
                         break;
                     case 2:
-                        result = calculator.factorialF(scanner.nextInt());
+                        logger.info("factorial function");
+
+                        int_input1 = scanner.nextInt();
+                        logger.info("input: "+int_input1);
+
+                        result = calculator.factorialF(int_input1);
                         if (result == -1) {
                             System.out.println("Please enter positive number!");
+                            logger.error("entered negative number");
                         } else {
                             System.out.println("result: " + result);
+                            logger.info("result: "+result);
                         }
                         break;
                     case 3:
-                        result = calculator.naturalLogarithmF(scanner.nextDouble());
+                        logger.info("natural logarithm function");
+
+                        input1 = scanner.nextDouble();
+                        logger.info("input: "+input1);
+
+                        result = calculator.naturalLogarithmF(input1);
                         if (result == -1) {
                             System.out.println("Please enter positive number!");
+                            logger.error("entered negative number");
                         } else {
                             System.out.println("result: " + result);
+                            logger.info("result: "+result);
                         }
                         break;
                     case 4:
+                        logger.info("power function");
+
+                        input1 = scanner.nextDouble();
+                        logger.info("base: "+input1);
+
+                        input2 = scanner.nextDouble();
+                        logger.info("exponent: "+input2);
+
                         result = calculator.powerF(scanner.nextDouble(), scanner.nextDouble());
                         System.out.println("result: " + result);
                         break;
                     case 5:
                         scanner.close();
+                        logger.info("calculated exited");
                         return;
                     default:
                         System.out.println("Enter correct choice!");
+                        logger.info("incorrect choice entered");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Input type mismatch !");
+                logger.error("input type mismatched");
                 scanner.nextLine();
             }
         } while (true);
