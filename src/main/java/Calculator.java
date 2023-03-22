@@ -68,6 +68,7 @@ public class Calculator {
         scanner.nextLine(); // skip first input while running in container
         System.out.println("-----------------Calculator-DevOps-----------------");
         do {
+
             logger.info("Showing calculator menu");
             System.out.println(
                     "Enter 1 for Square root.\n" +
