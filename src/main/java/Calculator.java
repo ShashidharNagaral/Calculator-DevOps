@@ -45,6 +45,7 @@ public class Calculator {
         }
         logger.info(" - [NATURAL LOGARITHM] of "+x+" - [RESULT] : "+ result);
         return result;
+
     }
 
     public double powerF(double base, double exponent) {
