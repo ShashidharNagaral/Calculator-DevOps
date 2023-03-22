@@ -69,7 +69,6 @@ public class Calculator {
         System.out.println("-----------------Calculator-DevOps-----------------");
         do {
             logger.info("Showing calculator menu");
-
             System.out.println(
                     "Enter 1 for Square root.\n" +
                     "Enter 2 for Factorial function.\n" +
